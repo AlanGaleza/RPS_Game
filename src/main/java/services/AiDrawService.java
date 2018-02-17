@@ -4,5 +4,5 @@ import model.Moves;
 
 public interface AiDrawService {
 
-    Moves randomDraw();
+    Moves randomDraw(int numberOfRounds, int player1Move, int player1Wins, int player2Wins);
 }

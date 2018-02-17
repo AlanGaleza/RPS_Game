@@ -1,8 +1,5 @@
 package services;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
-import java.util.List;
 import java.util.Scanner;
 
 public class GameProcess {
@@ -17,22 +14,22 @@ public class GameProcess {
         this.playersCreator = playersCreator;
     }
 
+
+
     public void gameProcess() {
 
-        int modePick;
-
+        int rounds;
         Scanner inputs = new Scanner(System.in);
-        System.out.println("Choose game mode, 1 - RPS, 2 - SPOCK");
-        modePick = inputs.nextInt();
 
-        if(modePick == 1) {
-            gameResultService.process(aiDrawService, playersCreator);
-        } else {
-            System.out.println("bad pick");
+        System.out.println("Number of wining rounds");
+        rounds = inputs.nextInt();
+        boolean game = gameResultService.process(aiDrawService, playersCreator, rounds);
+
+        if (game) {
+            System.out.println("Lets try again");
+            System.out.println("Number of wining rounds");
+            rounds = inputs.nextInt();
+            gameResultService.process(aiDrawService, playersCreator, rounds);
         }
-
-
-
-
     }
 }

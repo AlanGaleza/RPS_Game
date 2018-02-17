@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class PlayerRpsCreatorImpl implements PlayersCreator{
+public class PlayerCreatorImpl implements PlayersCreator{
 
     @Override
     public List<Player> playerCreator() {

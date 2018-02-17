@@ -4,6 +4,8 @@ public enum Moves {
 
     ROCK,
     PAPER,
-    SCISSORS;
+    SCISSORS,
+    SPOCK,
+    LIZARD
 
 }
