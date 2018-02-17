@@ -2,5 +2,5 @@ package services;
 
 public interface GameResultService {
 
-    boolean process(AiDrawService aiDrawService);
+    void process(AiDrawService aiDrawService, PlayersCreator playersCreator);
 }

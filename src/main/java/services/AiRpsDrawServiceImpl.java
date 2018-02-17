@@ -4,12 +4,16 @@ import model.Moves;
 
 public class AiRpsDrawServiceImpl implements AiDrawService {
 
-    private RandomNumberGeneratorServiceImpl randomNumberGeneratorServiceImpl = new RandomNumberGeneratorServiceImpl();
+    private final RandomNumberGeneratorService randomNumberGeneratorService;
+
+    public AiRpsDrawServiceImpl(RandomNumberGeneratorServiceImpl randomNumberGeneratorService) {
+        this.randomNumberGeneratorService = randomNumberGeneratorService;
+    }
 
     @Override
     public Moves randomDraw() {
 
-        int random = randomNumberGeneratorServiceImpl.rand();
+        int random = randomNumberGeneratorService.rand();
 
         if (random == 1) {
             return Moves.PAPER;
