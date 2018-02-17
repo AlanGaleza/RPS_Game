@@ -2,14 +2,11 @@ package services;
 
 import model.Moves;
 
-public class RpsGameResultImpl implements GameResultService {
-
-    private RandomNumberGeneratorService randomNumberGeneratorService = new RandomNumberGeneratorService();
-    private AiDrawService aiDrawService = new AiDrawService();
-    private PlayerCreatorService playerCreatorService;
+public class GameRpsResultImpl implements GameResultService {
 
     @Override
-    public void process() {2
+    public boolean process(AiDrawService aiDrawService) {
+
         boolean end = false;
         int player1Counter = 0;
         int player2Counter = 0;
@@ -18,7 +15,7 @@ public class RpsGameResultImpl implements GameResultService {
         while(!end) {
 
             Moves player1Pick = Moves.PAPER;
-            Moves player2Pick = aiDrawService.randomDraft();
+            Moves player2Pick = aiDrawService.randomDraw();
 
             if (player1Counter != 2 && player2Counter != 2) {
 
@@ -50,9 +47,9 @@ public class RpsGameResultImpl implements GameResultService {
             }
         }
         if (player1Counter == 2) {
-            System.out.println("Player 1 " + playerCreatorService.getPlayersList(0) + " win." );
+            return true;
         } else {
-            System.out.println("Player 1 " + playerCreatorService.getPlayersList(1) + " win." );
+            return false;
         }
     }
 }

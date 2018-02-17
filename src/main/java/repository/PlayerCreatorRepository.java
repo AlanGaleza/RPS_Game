@@ -1,13 +1,13 @@
-package services;
+package repository;
 
 import model.Player;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlayerCreatorService {
+public class PlayerCreatorRepository {
 
-    List<Player> playersList = new ArrayList<>();
+    private List<Player> playersList = new ArrayList<>();
 
     public List<Player> playerCreateList(String player1Name, String player2Name) {
 

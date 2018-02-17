@@ -2,13 +2,14 @@ package services;
 
 import model.Moves;
 
-public class RpsAiDrawServiceImpl {
+public class AiRpsDrawServiceImpl implements AiDrawService {
 
-    private RandomNumberGeneratorService randomNumberGeneratorService;
+    private RandomNumberGeneratorServiceImpl randomNumberGeneratorServiceImpl = new RandomNumberGeneratorServiceImpl();
 
+    @Override
     public Moves randomDraw() {
 
-        int random = randomNumberGeneratorService.rand();
+        int random = randomNumberGeneratorServiceImpl.rand();
 
         if (random == 1) {
             return Moves.PAPER;

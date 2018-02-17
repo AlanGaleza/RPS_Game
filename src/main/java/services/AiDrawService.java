@@ -4,5 +4,5 @@ import model.Moves;
 
 public interface AiDrawService {
 
-    Moves randomDraft();
+    Moves randomDraw();
 }

@@ -1,21 +1,12 @@
-import services.RpsGameResultImpl;
+import services.AiRpsDrawServiceImpl;
+import services.GameProcess;
+import services.GameRpsResultImpl;
 
 public class RpsRunner {
 
-
-
     public static void main(String args[]) {
 
-
-        RpsGameResultImpl rpsGameResultImpl = new RpsGameResultImpl();
-        rpsGameResultImpl.process();
-
-
-
-
-
-
-
+        GameProcess gameProcess = new GameProcess(new AiRpsDrawServiceImpl(), new GameRpsResultImpl());
+        gameProcess.gameProcess();
     }
-
 }
